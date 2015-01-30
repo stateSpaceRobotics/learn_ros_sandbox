@@ -1,0 +1,13 @@
+<launch>
+	<node pkg="stage_ros" type="stageros" name="stageros" args="$(find Learning_ROS_Sandbox)/worlds/map1.world" respawn="false" output="screen" />
+
+	<!-- turtlebot_teleop_key already has its own built in velocity smoother -->
+	<node pkg="turtlebot_teleop" type="turtlebot_teleop_key" name="turtlebot_teleop_keyboard"  output="screen">
+		<param name="scale_linear" value="0.5" type="double"/>
+		<param name="scale_angular" value="1.5" type="double"/>
+		<remap from="turtlebot_teleop_keyboard/cmd_vel" to="cmd_vel"/>
+	</node>
+
+	<node pkg="Learning_ROS_Sandbox" type="box1.py" name="sandbox_1"/>
+	
+</launch>
