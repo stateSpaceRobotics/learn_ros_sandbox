@@ -40,8 +40,8 @@ define hokuyo ranger
 (
   sensor(
     range [0 4.0]
-    fov 360.0
-    samples 360
+    fov 45.0
+    samples 45
   )
   color "black"
   size [ 0.05 0.05 0.1 ]
