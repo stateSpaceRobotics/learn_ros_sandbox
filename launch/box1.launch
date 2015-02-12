@@ -1,5 +1,5 @@
 <launch>
-	<node pkg="stage_ros" type="stageros" name="stageros" args="$(find Learning_ROS_Sandbox)/worlds/map2.world" respawn="false" output="screen" />
+	<node pkg="stage_ros" type="stageros" name="stageros" args="$(find Learning_ROS_Sandbox)/worlds/map4.world" respawn="false" output="screen" />
 
 	<node pkg="Learning_ROS_Sandbox" type="box1.py" name="sandbox_1"/>
 	

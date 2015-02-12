@@ -14,7 +14,7 @@ class sandbox_2(object):
 		'''
 		Constructor for sandbox_2 class.
 		'''
-		rospy.init_node("sandbox_2")									# initialize this as a ROS node named 'sandbox_1'
+		rospy.init_node("sandbox_2")									# initialize this as a ROS node named 'sandbox_2'
 		self.cmd_vel_pub = rospy.Publisher("cmd_vel", Twist)			# create publisher that can be used to publish twist messages over /cmd_vel topic
 		rospy.Subscriber("base_scan", LaserScan, self.laser_callback) 	# subscribe to /base_scan topic using self.laser_callback as the callback function
 
@@ -42,7 +42,8 @@ class sandbox_2(object):
 	def run(self):
 		'''
 		When this function is called, commands will continuously be sent to the
-		 simulated robot that will make the robot drive in a circle.
+		 simulated robot that will make the robot drive mostly forward.
+		The obstacle detected variables is used to determine when to avoid obstacles in the robot's path.
 		'''
 		while not rospy.is_shutdown():
 			twist = Twist()		# create an empty twist message
