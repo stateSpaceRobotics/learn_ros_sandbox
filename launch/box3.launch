@@ -1,7 +1,7 @@
 <launch>
-	<node pkg="stage_ros" type="stageros" name="stageros" args="$(find Learning_ROS_Sandbox)/worlds/map1_box2.world" respawn="false" output="screen" />
+	<node pkg="stage_ros" type="stageros" name="stageros" args="$(find learning_ros_sandbox)/worlds/map1_box2.world" respawn="false" output="screen" />
 
-	<node pkg="Learning_ROS_Sandbox" type="box3.py" name="sandbox_3"/>
+	<node pkg="learning_ros_sandbox" type="box3.py" name="sandbox_3"/>
 
 	<param name="point_A" type="str" value="1,1" />
 	<param name="point_B" type="str" value="5,1" />

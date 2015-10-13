@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>Learning_ROS_Sandbox</name>
+  <name>learning_ros_sandbox</name>
   <version>0.0.0</version>
   <description>The Learning_ROS_Sandbox package</description>
 

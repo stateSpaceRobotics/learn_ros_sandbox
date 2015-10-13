@@ -1,5 +1,5 @@
 <launch>
-	<node pkg="stage_ros" type="stageros" name="stageros" args="$(find Learning_ROS_Sandbox)/worlds/map1.world" respawn="false" output="screen" />
+	<node pkg="stage_ros" type="stageros" name="stageros" args="$(find learning_ros_sandbox)/worlds/map1.world" respawn="false" output="screen" />
 
 	<!-- turtlebot_teleop_key already has its own built in velocity smoother -->
 	<node pkg="turtlebot_teleop" type="turtlebot_teleop_key" name="turtlebot_teleop_keyboard"  output="screen">
