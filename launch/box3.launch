@@ -1,4 +1,6 @@
 <launch>
+    <rosparam command="load" file="$(find learning_ros_sandbox)/param/box3.yaml" />
+
 	<node pkg="stage_ros" type="stageros" name="stageros" args="$(find learning_ros_sandbox)/worlds/map1_box2.world" respawn="false" output="screen" />
 
 	<node pkg="learning_ros_sandbox" type="box3.py" name="sandbox_3"/>
