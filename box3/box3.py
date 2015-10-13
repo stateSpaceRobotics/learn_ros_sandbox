@@ -18,6 +18,8 @@ class sandbox_3(object):
 		rospy.init_node("sandbox_3")									# initialize this as a ROS node named 'sandbox_3'
 		self.cmd_vel_pub = rospy.Publisher("cmd_vel", Twist)			# create publisher that can be used to publish twist messages over /cmd_vel topic
 
+		#the 1 and 20 are defualt values in case the parameter server doesn't have the parameter
+		#	to changes these values, change the parameter in the param/box3.yaml file
 		self.param_speed = rospy.get_param("box3/linear_speed", 1)
 		self.param_angle = rospy.get_param("box3/angular_speed", 20)
 
@@ -29,9 +31,10 @@ class sandbox_3(object):
 		'''
 		while not rospy.is_shutdown():
 			twist = Twist()		# create an empty twist message
-			twist.linear.x = self.param_speed
+			
+			twist.linear.x = self.param_speed    #the x axis goes out the front of the robot, so linear x is forward speed
+			twist.angular.z = self.param_angle   #the z axis goes up out of the robot, so angular z is it turning on the floor
 
-			twist.angular.z = self.param_angle
 			self.cmd_vel_pub.publish(twist)		# publish our twist message to cmd_vel topic
 
 			rospy.sleep(0.1)					# sleep briefly so ROS doesn't die
